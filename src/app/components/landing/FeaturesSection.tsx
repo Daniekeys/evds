@@ -36,24 +36,22 @@ export default function FeaturesSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto lg:gap-8">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className={`${feature.bgClass} rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[400px] flex group transition-transform hover:-translate-y-2`}
+              className={`rounded-3xl overflow-hidden relative min-h-[300px] sm:min-h-[500px] flex group transition-transform flex-col hover:-translate-y-2 min-w-fit `}
             >
-              <h3 className="absolute top-8 left-8 text-2xl md:text-3xl font-bold text-white z-10 max-w-[200px]">
-                {feature.title}
-              </h3>
-              <div className="absolute inset-0 w-full h-full p-4 pt-20 flex items-end justify-center md:items-center">
-                 <div className="relative w-full h-[120%] -bottom-10 md:h-[130%] md:-bottom-16">
+              
+              
+                 <div className="relative w-full h-[120%] ">
                     <Image
                       src={feature.image}
                       alt={feature.title}
                       fill
                       className="object-contain object-bottom md:object-right-bottom group-hover:scale-105 transition-transform duration-500"
                     />
-                 </div>
+                
               </div>
             </div>
           ))}
